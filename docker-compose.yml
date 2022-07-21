@@ -9,6 +9,9 @@ services:
     volumes:
       - /usr/src/app/node_modules
       - ./:/usr/src/app
+    environment:
+      #            Fixes bug where websocket connection is fixed to default port 3000
+      - WDS_SOCKET_PORT=0
     stdin_open: true
   test:
     build:
